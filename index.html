@@ -200,13 +200,33 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-3">Problem Definition</h2>
+          <h2 class="title is-3">Open-Vocabulary 3D Perception-Method Overview</h2>
           <center>
-          <img src="static/images/method_overview_v11.pdf" alt="Problem definition" class="center-image blend-img-background"/>
+          <img src="static/images/method_overview_v11-1.png" alt="Problem definition" class="center-image blend-img-background"/>
           </center>
           <div class="level-set has-text-justified">
             <p>
-               Finetuning the video diffusion model on the input video alone limits the extent of motion change. Instead, we use a mixed objective that beside the original objective (bottom left) also finetunes on the unordered set of frames. This is done by using “masked temporal attention”, preventing the temporal attention and convolution from being finetuned (bottom right). This allows adding motion to a static video.
+              Illustration of open-vocabulary 3D perception methods. (a) Directly minimizing the per-point feature distance between the CLIP-based model and the tuned 3D model. (b) Directly using a 3D mask proposal network trained on labeled 3D data to produce class-agnostic masks, and then pool corresponding representations from the CLIP feature map. (c) The proposed mask distillation approach, namely Diff2Scene, that uses Stable Diffusion and performs mask-based distillation. Diff2Scene leverages the semantically-rich mask embeddings from 2D foundation models and geometrically accurate masks from the tuned 3D model, and thus achieves superior performance compared to previous methods.            
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Diff2Scene</h2>
+          <center>
+          <img src="static/images/open3d_method_v14.png" alt="Problem definition" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              Overview of our method. We propose Diff2Scene, an open-vocabulary 3D semantic understanding model. Diff2Scene contains two branches. The 2D branch is designed to be a diffusion-based 2D semantic segmentation model. It accepts a 2D image as input and predicts a set of 2D probabilistic masks with corresponding semantically-rich mask embeddings. The 3D branch utilizes the point cloud and 2D mask embeddings as input. The 2D mask embeddings are used as “semantic queries” to generate corresponding 3D probabilistic masks. The model learns salient patterns from the RGB images and geometric information from the point clouds.            
             </p>
           </div>
         </div>
