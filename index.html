@@ -202,11 +202,31 @@
         <div class="content">
           <h2 class="title is-3">Problem Definition</h2>
           <center>
-          <img src="static/images/carousel1.jpg" alt="Problem definition" class="center-image blend-img-background"/>
+          <img src="static/images/method_overview_v11.pdf" alt="Problem definition" class="center-image blend-img-background"/>
           </center>
           <div class="level-set has-text-justified">
             <p>
                Finetuning the video diffusion model on the input video alone limits the extent of motion change. Instead, we use a mixed objective that beside the original objective (bottom left) also finetunes on the unordered set of frames. This is done by using “masked temporal attention”, preventing the temporal attention and convolution from being finetuned (bottom right). This allows adding motion to a static video.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Qualitative Results on Zero-Shot Semantic Segmentation</h2>
+          <center>
+          <img src="static/images/vis_seg.png" alt="vis seg" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              Qualitative results from our model and OpenScene on zero-shot semantic segmentation. We observe that our model can predict coherent masks with accurate semantic labels compared to OpenScene for both head and tail categories.
             </p>
           </div>
         </div>
